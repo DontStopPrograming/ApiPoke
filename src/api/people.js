@@ -1,8 +1,8 @@
 export async function getPeople() {
   try{
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/')
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/`)
     if(!response.ok){
-        throw new NetworkError()
+        return (response.status)
     }
     const data = await response.json()
     return data
@@ -10,6 +10,8 @@ export async function getPeople() {
     throw err
   }
 }
+
+
 
 export async function getCharacter(id = 1){
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
