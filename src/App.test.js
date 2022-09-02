@@ -14,7 +14,7 @@ describe('poke APPi', () => {
 
     render(<App />)
     expect(window.fetch).toHaveBeenCalledTimes(1)
-    expect(window.fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/pokemon/')
+    expect(window.fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/people/')
 
     for(let character of data.results){
       expect(await screen.findByText(character.name)).toBeInTheDocument()
